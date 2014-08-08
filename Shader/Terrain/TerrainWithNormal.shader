@@ -1,12 +1,14 @@
 /* Code provided by Chris Morris of Six Times Nothing (http://www.sixtimesnothing.com) */
 /* Free to use and modify  */
 
+/* Modified to fit with 6 Texture Layers
+/* No Fallback right now for 4 Texture Layers on Old GPU's
 
 Shader "Hidden/TerrainEngine/Splatmap/Lightmap-FirstPass" {
 Properties {
 	_Control ("Control (RGBA)", 2D) = "red" {}
-	_Splat5 ("Layer 3 (A)", 2D) = "white" {}
-	_Splat4 ("Layer 3 (A)", 2D) = "white" {}
+	_Splat5 ("Layer 5 (A)", 2D) = "white" {}
+	_Splat4 ("Layer 4 (A)", 2D) = "white" {}
 	_Splat3 ("Layer 3 (A)", 2D) = "white" {}
 	_Splat2 ("Layer 2 (B)", 2D) = "white" {}
 	_Splat1 ("Layer 1 (G)", 2D) = "white" {}
@@ -107,5 +109,5 @@ ENDCG
 }
 
 // Fallback to Diffuse
-//Fallback "Diffuse"
+Fallback "Diffuse"
 }
